@@ -44,13 +44,13 @@ def login():
             # Then store the result of that query to a `user` variable so it can be
             # passed to the login_user() method below.
             user = db.session.query(UserProfile).filter(UserProfile.username == username).first()
-            flash(user==None)
             if user is not None and check_password_hash(user.password, password):
             # get user id, load into session
                 login_user(user)
-                flash('Successfully Logged in')
                 # remember to flash a message to the user
+                flash('Successfully Logged in')
                 return redirect(url_for('secure_page'))  # they should be redirected to a secure-page route instead
+            flash("Incorrect Credentials")
             return render_template("login.html", form=form)
     return render_template("login.html", form=form)
 
@@ -59,6 +59,11 @@ def login():
 def secure_page():
     return render_template('secure_page.html')
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('Logged out')
+    return redirect(url_for('login'))
 
 # user_loader callback. This callback is used to reload the user object from
 # the user ID stored in the session

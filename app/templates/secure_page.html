@@ -1,11 +1,7 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Page</title>
-</head>
+{% extends "base.html" %}
+
 <body>
+    {%block main%}
     <h1>Secure Page</h1>
     <p>Hi! you are on a very secure page. I wonder how you get here.
         haha. its cool i already know. YOU LOGGED IN! hahahahahahahahahahha
@@ -15,5 +11,6 @@
         its all a trap.
     </p>
     <p>xoxo- gossip girl</p>
+    {%endblock%}
 </body>
 </html>
