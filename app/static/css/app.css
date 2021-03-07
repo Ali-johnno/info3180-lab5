@@ -1,3 +1,16 @@
 body {
     padding-top: 5rem;
 }
+
+.flashes{
+    color: white;
+    font-size: 20px;
+    padding:0;
+}
+
+.flashes div{
+    padding: 5px;
+    display: inline-block;
+    background-color: rgb(182, 235, 103);
+    border-radius: 5px;
+}
